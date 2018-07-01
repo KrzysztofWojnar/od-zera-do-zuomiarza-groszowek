@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Human } from './Objects/Human';
+import './Objects/core-clicker';
 import { Button } from 'protractor';
 import { generate } from 'rxjs';
 
