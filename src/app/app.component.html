@@ -3,12 +3,18 @@
   <h1>
     Witamy w grze {{ title }}!
   </h1>
-  <a id="click" href="#" (click)="onSelect(counting.Click())">
+  <a id="click" href="#" (click)="onSelect(newCounting.Click())">
       <img width="200" alt="Angular Logo" src="http://monetowo.pl/img/2017-1-Grosz-Wzor-2017-Rewers-69836.jpg">
     </a>
 </div>
-<p align="center">Twój stan konta to: {{counting.account}}
+<p align="center">Twój stan konta to: {{newCounting.account1}} groszy!
 </p>
+<p style="font-size: 300%" align=center><b>
+  <a href=# (click)="onSelect(upgrade.Click())">
+    ULEPSZ
+  </a>
+</b></p>
+<p align=center>Koszt to tylko 10 groszy!</p>
 <h2>Here are some links to help you start: </h2>
 <ul>
   <li>
