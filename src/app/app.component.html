@@ -3,31 +3,29 @@
   <h1>
     Witamy w grze {{ title }}!
   </h1>
-  <a id="click" href="#" (click)="onSelect(newCounting.Click())">
-      <img width="200" alt="Angular Logo" src="http://monetowo.pl/img/2017-1-Grosz-Wzor-2017-Rewers-69836.jpg">
-    </a>
+  <!-- <img (click)="onSelect(clicker.onClick())" width="200" alt="Angular Logo" src="http://monetowo.pl/img/2017-1-Grosz-Wzor-2017-Rewers-69836.jpg"> -->
+  <img (click)="clicker.onClick()" width="200" alt="Angular Logo" src="http://monetowo.pl/img/2017-1-Grosz-Wzor-2017-Rewers-69836.jpg">
 </div>
-<p align="center">Twój stan konta to: {{newCounting.account1}} groszy!
+<p align="center">Twój stan konta to: {{clicker.getResoult(clicker.account)}} groszy!
 </p>
-<p style="font-size: 300%" align=center><b>
-  <a href=# (click)="onSelect(upgrade.Click())">
-    ULEPSZ
-  </a>
-</b></p>
+<p style="font-size: 300%" align=center (click)="clicker.update()">
+  <b>
+    <a href=#>
+      ULEPSZ
+    </a>
+  </b>
+</p>
 <p align=center>Koszt to tylko 10 groszy!</p>
-<h2>Here are some links to help you start: </h2>
+<app-no-cash-alert></app-no-cash-alert>
+<app-investments></app-investments>
+ <p>Here are some links to help you start: </p>
 <ul>
   <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
+    <p>
+      <a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a>
+    </p>
   </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="./od-zera-do-zuomiarza-groszowek.component">Nasza strona na naszej-klasie</a></h2>
-  </li>
+ 
 </ul>
 
-{{human.pole}}
-{{human.metoda()}}
-
+{{human.pole}} {{human.metoda()}}
