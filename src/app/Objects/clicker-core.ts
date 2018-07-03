@@ -24,7 +24,7 @@ export class Clicker {
     return (account.toString());
   }
 
-  update() {
+  upgrade() {
     if (this.account > 9) {
       this.count(-10);
       this.clickValue = this.clickValue + 1;
