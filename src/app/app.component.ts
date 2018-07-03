@@ -20,3 +20,5 @@ export class AppComponent {
     this.clicker = new Clicker();
   }
 }
+
+var myTimer = setInterval(console.log("pomocy"), 100);

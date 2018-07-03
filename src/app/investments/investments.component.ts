@@ -8,12 +8,20 @@ import { Clicker } from '../Objects/clicker-core';
   styleUrls: ['./investments.component.css']
 })
 export class InvestmentsComponent {
-  clicker: Clicker;
-  investmentIncome: Number = 0;
+  investmentIncome: Number = 10;
+  /* account = Clicker.globalAccount;
   onInvestmentIncome () {
-    this.clicker.count (this.investmentIncome); 
+    console.log("Twoja.stara");
+    this.count (this.investmentIncome);
   }
-  constructor() { }
+  public count(value) {
+    console.log(Clicker.globalAccount);
+    this.account = this.account + value;
+    return this.account;
+  }
+  constructor() {
+    this.account = Clicker.globalAccount;
+   } */
 
   
 }
