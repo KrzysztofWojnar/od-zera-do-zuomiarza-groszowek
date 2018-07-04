@@ -21,4 +21,4 @@ export class AppComponent {
   }
 }
 
-var myTimer = setInterval(console.log("pomocy"), 100);
+setTimeout(console.log("pomocy"), 10000);
