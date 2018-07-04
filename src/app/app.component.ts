@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
-import { Human } from './Objects/Human';
 import { Clicker } from './Objects/clicker-core';
-import { InvestmentsComponent } from './investments/investments.component'
+import { Account } from './Objects/Account';
 import { Button } from 'protractor';
 import { generate } from 'rxjs';
 
@@ -12,13 +11,11 @@ import { generate } from 'rxjs';
 })
 export class AppComponent {
   title = 'Od zera do zuomiarza groszówek';
-  human: Human;
   
   public clicker: Clicker;
   constructor() {
-    this.human = new Human();
     this.clicker = new Clicker();
   }
 }
 
-setTimeout(console.log("pomocy"), 10000);
+setInterval(() => console.log("pomocy"), 1000);

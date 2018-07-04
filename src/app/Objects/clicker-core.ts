@@ -1,7 +1,13 @@
 import { NoCashAlertComponent } from "../no-cash-alert/no-cash-alert.component";
+import { IncomeEntity } from './IncomeEntity';
 
-export class Clicker {
-  let
+export class Clicker extends IncomeEntity {
+  constructor() {
+    super();
+    this.account = this.account;
+    this.clickValue = this.clickValue;
+
+  }
   clickValue = 1;
   upgradeValue = 1;
   account = 0;
@@ -14,11 +20,6 @@ export class Clicker {
   onClick() {
     this.count(this.clickValue);
     return (this.account);
-  }
-  constructor() {
-    this.account = this.account;
-    this.clickValue = this.clickValue;
-
   }
   getResoult(account): String {
     return (account.toString());
