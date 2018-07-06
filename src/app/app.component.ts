@@ -11,10 +11,12 @@ import { generate } from 'rxjs';
 })
 export class AppComponent {
   title = 'Od zera do zuomiarza groszówek';
+  account;
   
   public clicker: Clicker;
   constructor() {
     this.clicker = new Clicker();
+    this.account = new Account();
   }
 }
 

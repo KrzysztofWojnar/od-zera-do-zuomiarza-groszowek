@@ -1,6 +1,6 @@
 export class Account {
-    cash: Number = 0;
-    public getResoult(): String {
-        return this.cash.toString();
+    public static cash: number = 0;
+    public static getResoult(): String {
+        return Account.cash.toString();
     }
 }

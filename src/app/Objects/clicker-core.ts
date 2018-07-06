@@ -8,6 +8,7 @@ export class Clicker extends IncomeEntity {
     this.clickValue = this.clickValue;
 
   }
+  income = 1;
   clickValue = 1;
   upgradeValue = 1;
   account = 0;

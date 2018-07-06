@@ -2,18 +2,24 @@ import { NoCashAlertComponent } from "../no-cash-alert/no-cash-alert.component";
 import { Account } from '../Objects/Account';
 
 export class IncomeEntity {
-    income: Number;
-    upgradeCost: Number;
+    income: number;
+    upgradeCost: number;
+    incomeTemp: number;
+    isUpgradeable(myCash):boolean {
+        return this.upgradeCost<=myCash;
+    }
     upgrade () {
-        // if (income > upgradeCost-1) {
-        //    this.onEvent(-this.upgradeCost);
-        //    this.clickValue = this.clickValue + 1;
-        //  } else {
-        //    NoCashAlertComponent.isVisible = true;
+         if (Account.cash >= this.upgradeCost) {
+            this.incomeTemp = this.income;
+            this.income = this.upgradeCost;
+            this.onEvent();
+            this.income = this.incomeTemp + 1;
+          } else {
+            NoCashAlertComponent.isVisible = true;
+         }
     }
     onEvent () {
-        //this.account = this.account + this.income;
-        //return this.getResoult(this.account);
-
+        Account.cash += Account.cash + this.income;
+        return Account.getResoult();
     }
 }
