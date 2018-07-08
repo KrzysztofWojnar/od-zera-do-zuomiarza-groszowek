@@ -11,7 +11,7 @@ import { generate } from 'rxjs';
 })
 export class AppComponent {
   title = 'Od zera do zuomiarza groszówek';
-  account;
+  account: Object;
   
   public clicker: Clicker;
   constructor() {
