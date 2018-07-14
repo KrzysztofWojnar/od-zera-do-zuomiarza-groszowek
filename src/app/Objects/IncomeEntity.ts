@@ -5,11 +5,18 @@ export class IncomeEntity {
     income: number;
     upgradeCost: number;
     incomeTemp: number;
+    constructor () {
+        this.income = this.income
+    }
     isUpgradeable(myCash):boolean {
         return this.upgradeCost<=myCash;
     }
+    getIncome (): number {
+        console.log (this.income);
+        return this.income;
+    }
     upgrade () {
-         if (Account.checkAccount () >= this.upgradeCost) {
+         if (Account.getAccount () >= this.upgradeCost) {
             this.incomeTemp = this.income;
             this.income = this.upgradeCost;
             this.onEvent();
@@ -19,9 +26,10 @@ export class IncomeEntity {
          }
     }
     onEvent () {
-        Account.setAccount (() => Account.checkAccount () + this.income);
-        console.log ();
-        return Account.getResoult();
+        Account.setAccount (Account.getAccount () + this.income);
+/*         console.log (this.income.toString());
+        console.log (Account.getAccount()); */
+        return;
 
     }
 }

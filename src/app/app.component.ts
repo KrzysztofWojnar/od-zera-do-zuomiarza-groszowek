@@ -20,4 +20,4 @@ export class AppComponent {
   }
 }
 
-setInterval(() => console.log("pomocy"), 1000);
+/* setInterval(() => console.log("pomocy"), 1000); */
