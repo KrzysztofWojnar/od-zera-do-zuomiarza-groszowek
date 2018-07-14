@@ -9,7 +9,7 @@ export class IncomeEntity {
         return this.upgradeCost<=myCash;
     }
     upgrade () {
-         if (Account.cash >= this.upgradeCost) {
+         if (Account.checkAccount () >= this.upgradeCost) {
             this.incomeTemp = this.income;
             this.income = this.upgradeCost;
             this.onEvent();
@@ -19,7 +19,9 @@ export class IncomeEntity {
          }
     }
     onEvent () {
-        Account.cash += Account.cash + this.income;
+        Account.setAccount (() => Account.checkAccount () + this.income);
+        console.log ();
         return Account.getResoult();
+
     }
 }

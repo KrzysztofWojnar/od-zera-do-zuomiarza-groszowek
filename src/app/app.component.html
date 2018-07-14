@@ -10,11 +10,9 @@
     </div>
     <!-- CLICKER -->
     <div class="col-sm-6" style="background-color:rgb(96, 96, 138);">
-      <!-- <img (click)="onSelect(clicker.onClick())" width="200" alt="Angular Logo" src="http://monetowo.pl/img/2017-1-Grosz-Wzor-2017-Rewers-69836.jpg"> -->
-      <img class="img-circle" (click)="clicker.onEvent()" width="200" alt="Angular Logo" src="../assets/grosz.png">
-      <!-- <p align="center">Twój stan konta to: {{clicker.getResoult(clicker.account)}} groszy! -->
-      <!-- </p> -->
-      <p align="center">Twój stan konta to: {{Account.getResoult(Account.cash)}} groszy!
+      <img class="img-circle" (click)="clicker.onClick()" width="100" alt="Angular Logo" src="../assets/grosz.png">
+      <!-- STARE -->
+      <p align="center">Twój stan konta to: {{clicker.getResoult(clicker.account)}} groszy!
       </p>
       <p style="font-size: 300%">
         <div class=row>
@@ -22,7 +20,7 @@
           <div class="col-2">
             <b>
               <a href=#>
-                <!-- <div (click)="clicker.upgrade()">ULEPSZ</div> -->
+                <div (click)="clicker.upgrade()">ULEPSZ</div>
               </a>
             </b>
           </div>
@@ -31,9 +29,12 @@
         <p align=center>Koszt to tylko 10 groszy!</p>
         <app-no-cash-alert></app-no-cash-alert>
     </div>
-    <!-- IN PROGRESS -->
+    <!-- NOWA WERSJA -->
     <div class="col-sm-3" style="background-color:rgb(108, 153, 115);">
-      <p>Tu cos będzie...</p>
+      <img class="img-circle" (click)="clicker.onEvent()" width="100" alt="Angular Logo" src="../assets/grosz.png">
+      <!-- NOWE -->
+      <!-- <p align="center">Twój stan konta to: <br> {{Account.getResoult(Account.cash)}} groszy!
+      </p> -->
     </div>
   </div>
   <!-- LEGACY -->
