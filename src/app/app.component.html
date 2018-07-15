@@ -10,9 +10,8 @@
     </div>
     <!-- CLICKER -->
     <div class="col-sm-6" style="background-color:rgb(96, 96, 138);">
-      <img class="img-circle" (click)="clicker.onClick()" width="100" alt="Angular Logo" src="../assets/grosz.png">
-      <!-- STARE -->
-      <p align="center">Twój stan konta to: {{clicker.getResoult(clicker.account)}} groszy!
+      <img class="img-circle" (click)="clicker.onEvent()" width="100" alt="Angular Logo" src="../assets/grosz.png">
+      <p align="center">Twój stan konta to: {{account.getResoult(account.cash)}} groszy!
       </p>
       <p style="font-size: 300%">
         <div class=row>
@@ -31,11 +30,9 @@
     </div>
     <!-- NOWA WERSJA -->
     <div class="col-sm-3" style="background-color:rgb(108, 153, 115);">
-      <img class="img-circle" (click)="clicker.onEvent()" width="100" alt="Angular Logo" src="../assets/grosz.png">
-      <!-- NOWE -->
-      <!-- <p align="center">Twój stan konta to: <br> {{account.getResoult(Account.cash)}} groszy!
-    </p> -->
+      
     </div>
+
   </div>
   <!-- LEGACY -->
   <p>

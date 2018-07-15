@@ -5,6 +5,7 @@ export class IncomeEntity {
     income: number;
     upgradeCost: number;
     incomeTemp: number;
+    upgradeValue: number;
     constructor () {
         this.income = this.income
     }
@@ -16,17 +17,17 @@ export class IncomeEntity {
         return this.income;
     }
     upgrade () {
-         if (Account.getAccount () >= this.upgradeCost) {
+         if (Account.getCash () >= this.upgradeCost) {
             this.incomeTemp = this.income;
-            this.income = this.upgradeCost;
+            this.income = -this.upgradeCost;
             this.onEvent();
-            this.income = this.incomeTemp + 1;
+            this.income = this.incomeTemp + this.upgradeValue;
           } else {
             NoCashAlertComponent.isVisible = true;
          }
     }
     onEvent () {
-        Account.setAccount (Account.getAccount () + this.income);
+        Account.setCash (Account.getCash () + this.income);
 /*         console.log (this.income.toString());
         console.log (Account.getAccount()); */
         return;

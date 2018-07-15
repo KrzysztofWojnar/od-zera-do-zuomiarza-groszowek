@@ -1,18 +1,18 @@
 export class Account {
     public static cash: number = 0;
     constructor () {
-        Account.getResoult();
+        this.getResoult();
     }
-    public static getResoult(): String {
-        console.log (Account.cash+" (getResoult signal)");
+    public getResoult(): String {
+        /* console.log (Account.cash+" (getResoult signal)"); */
         return Account.cash.toString();
     }
-    public static setAccount (value) {
+    public static setCash (value) {
 /*          console.log (Account.cash+" (setter signal)"); */
         Account.cash = value;
         return;
     }
-    public static getAccount (): number {
+    public static getCash (): number {
 /*                 console.log (Account.cash + " (getter signal)"); */
         return Account.cash;
     }

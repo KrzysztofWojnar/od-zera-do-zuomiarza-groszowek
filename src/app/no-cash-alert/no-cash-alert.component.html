@@ -1,8 +1,8 @@
-<div *ngFor='let i of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]'>
+<ng-container *ngFor='let i of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]'>
   <div class="alert alert-warning" *ngIf="getVisible()">
     {{i}}
     <strong>Warning!</strong> U hav no $$$.
     <i (click)="close()" class="material-icons">clear</i>
     <span class="glyphicon glyphicon-remove"></span>
   </div>
-</div>
+</ng-container>
