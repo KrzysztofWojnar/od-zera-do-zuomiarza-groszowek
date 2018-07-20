@@ -2,6 +2,7 @@ import { NoCashAlertComponent } from "../no-cash-alert/no-cash-alert.component";
 import { Account } from '../Objects/Account';
 
 export class IncomeEntity {
+    className: string;
     income: number;
     upgradeCost: number;
     incomeTemp: number;
@@ -17,7 +18,7 @@ export class IncomeEntity {
         return this.income;
     }
     public upgrade () {
-        console.log("upgrade!");
+        console.log("upgrade!"+this.className);
          if (Account.getCash () >= this.upgradeCost) {
             this.incomeTemp = this.income;
             this.income = -this.upgradeCost;

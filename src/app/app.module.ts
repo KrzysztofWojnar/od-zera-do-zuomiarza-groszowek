@@ -7,12 +7,16 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NotificationBoxComponent } from './notification-box/notification-box.component';
+import { NotificationComponent } from './notification-box/notification/notification.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NoCashAlertComponent,
     InvestmentsComponent,
+    NotificationBoxComponent,
+    NotificationComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Time } from '@angular/common';
 import { IncomeEntity } from '../Objects/IncomeEntity';
 
 @Component({
@@ -8,14 +7,15 @@ import { IncomeEntity } from '../Objects/IncomeEntity';
   styleUrls: ['./investments.component.css']
 })
 export class InvestmentsComponent extends IncomeEntity {
+  upgradeCost = 100;
+  income = 0;
+  upgradeValue = 1;
+  className = "Inwestycje";
   constructor() {
     super();
     setInterval(() => this.onEvent(), 1000);
-    setInterval(() => this.upgrade(), 2500);
+    /* console.log(this.income);
+    console.log(this.upgradeCost);
+    console.log(this.upgradeValue); */
   }
-  upgradeCost = 12 ;
-  income = 2;
-  upgradeValue = 10;
-
-
 }

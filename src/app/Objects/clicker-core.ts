@@ -7,4 +7,5 @@ export class Clicker extends IncomeEntity {
   upgradeCost = 10;
   income = 1;
   upgradeValue = 1;
+  className = "Clicker";
 }

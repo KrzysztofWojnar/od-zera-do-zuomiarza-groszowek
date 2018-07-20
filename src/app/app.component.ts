@@ -3,6 +3,8 @@ import { Clicker } from './Objects/clicker-core';
 import { Account } from './Objects/Account';
 import { Button } from 'protractor';
 import { generate } from 'rxjs';
+import { NoCashAlertComponent } from './no-cash-alert/no-cash-alert.component';
+import { NotificationBoxComponent } from './notification-box/notification-box.component';
 
 @Component({
   selector: 'app-root',
@@ -19,5 +21,3 @@ export class AppComponent {
     this.account = new Account();
   }
 }
-
-/* setInterval(() => console.log("pomocy"), 1000); */

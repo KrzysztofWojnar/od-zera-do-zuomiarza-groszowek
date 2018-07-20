@@ -2,12 +2,10 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-no-cash-alert',
-  templateUrl: './no-cash-alert.component.html',
-  styleUrls: ['./no-cash-alert.component.css']
+  templateUrl: './no-cash-alert.component.html'
 })
 export class NoCashAlertComponent implements OnInit {
   public static isVisible: Boolean;
-
 
   constructor() {
     NoCashAlertComponent.isVisible = false;
@@ -20,4 +18,5 @@ export class NoCashAlertComponent implements OnInit {
   getVisible(): Boolean {
     return NoCashAlertComponent.isVisible;
   }
+
 }
