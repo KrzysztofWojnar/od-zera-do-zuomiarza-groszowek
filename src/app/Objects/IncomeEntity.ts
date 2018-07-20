@@ -16,7 +16,8 @@ export class IncomeEntity {
         console.log (this.income);
         return this.income;
     }
-    upgrade () {
+    public upgrade () {
+        console.log("upgrade!");
          if (Account.getCash () >= this.upgradeCost) {
             this.incomeTemp = this.income;
             this.income = -this.upgradeCost;
