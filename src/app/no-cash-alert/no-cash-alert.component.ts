@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NotificationBoxComponent } from '../notification-box/notification-box.component';
 
 @Component({
   selector: 'app-no-cash-alert',
@@ -9,6 +10,8 @@ export class NoCashAlertComponent implements OnInit {
 
   constructor() {
     NoCashAlertComponent.isVisible = false;
+/*     for (let i=0; i<=10; i++) { */
+    /* } */
   }
   close() {
     NoCashAlertComponent.isVisible = false;

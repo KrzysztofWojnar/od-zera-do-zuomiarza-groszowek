@@ -9,18 +9,21 @@ import { NotificationComponent } from './notification/notification.component';
 export class NotificationBoxComponent implements OnInit {
 
   private static notifications: any[];
-
+  getNotifications():any[]{
+return NotificationBoxComponent.notifications;
+  }
   constructor() {
     NotificationBoxComponent.notifications = [];
-    for (let i=0; i<=10; i++) {
-      NotificationBoxComponent.notifications.push(i);
-    }
+
   }
 
   ngOnInit() {
   }
 
-  static addNotification (alert:any) {
+  public static addNotification(alert: any) {
+    if (NotificationBoxComponent.notifications === undefined) {
+      NotificationBoxComponent.notifications = [];
+    }
     NotificationBoxComponent.notifications.push(alert);
   }
 }

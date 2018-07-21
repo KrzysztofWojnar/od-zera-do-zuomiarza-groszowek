@@ -1,5 +1,5 @@
 <div id="notificationBox">
-  <div *ngFor="let notification of notifications">
+  <div *ngFor="let notification of getNotifications()">
     <app-notification [alert]=notification></app-notification>
 
   </div>

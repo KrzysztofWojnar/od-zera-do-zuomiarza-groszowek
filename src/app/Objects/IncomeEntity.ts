@@ -1,5 +1,6 @@
 import { NoCashAlertComponent } from "../no-cash-alert/no-cash-alert.component";
 import { Account } from '../Objects/Account';
+import { NotificationBoxComponent } from "../notification-box/notification-box.component";
 
 export class IncomeEntity {
     className: string;
@@ -25,6 +26,7 @@ export class IncomeEntity {
             this.onEvent();
             this.income = this.incomeTemp + this.upgradeValue;
           } else {
+            NotificationBoxComponent.addNotification("Nie masz pieniędzy!");
             NoCashAlertComponent.isVisible = true;
          }
     }
