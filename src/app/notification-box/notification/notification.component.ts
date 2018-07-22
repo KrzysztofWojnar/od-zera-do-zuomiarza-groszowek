@@ -12,7 +12,9 @@ export class NotificationComponent implements OnInit {
   hide () {
     this.isVisible = false;
   }
-  
+  getAlert():any {
+    return alert
+  }
   ngOnInit() {
   }
 

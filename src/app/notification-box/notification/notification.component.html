@@ -1,3 +1,5 @@
-<div class="alert alert-warning" *ngIf="isVisible">{{alert}}
-  <span (click)="hide()"><span class="glyphicon glyphicon-remove">x</span></span>
+<div class="{{alert[1]}}" *ngIf="isVisible">
+  <span (click)="hide()">
+    {{alert[0]}}
+  </span>
 </div>

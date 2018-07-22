@@ -26,7 +26,7 @@ export class IncomeEntity {
             this.onEvent();
             this.income = this.incomeTemp + this.upgradeValue;
           } else {
-            NotificationBoxComponent.addNotification("Nie masz pieniędzy!");
+            NotificationBoxComponent.addNotification("Nie masz pieniędzy!", 2);
             NoCashAlertComponent.isVisible = true;
          }
     }
