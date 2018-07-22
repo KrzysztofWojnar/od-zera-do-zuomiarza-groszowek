@@ -1,6 +1,7 @@
 import { NoCashAlertComponent } from "../no-cash-alert/no-cash-alert.component";
 import { Account } from '../Objects/Account';
-import { NotificationBoxComponent } from "../notification-box/notification-box.component";
+import { NotificationBoxComponent} from '../notification-box/notification-box.component';
+import { Alert, alertTypeEnumeration } from "../notification-box/alert";
 
 export class IncomeEntity {
     className: string;
@@ -25,8 +26,9 @@ export class IncomeEntity {
             this.income = -this.upgradeCost;
             this.onEvent();
             this.income = this.incomeTemp + this.upgradeValue;
+            NotificationBoxComponent.addNotification(new Alert("Ulepszenie wykupione!", alertTypeEnumeration.INFO));
           } else {
-            NotificationBoxComponent.addNotification("Nie masz pieniędzy!", 2);
+            NotificationBoxComponent.addNotification(new Alert("Nie masz pieniędzy!", alertTypeEnumeration.WARNING));
             NoCashAlertComponent.isVisible = true;
          }
     }

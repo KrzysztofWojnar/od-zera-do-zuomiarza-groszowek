@@ -1,6 +1,6 @@
-<div class="{{alert[1]}}" *ngIf="isVisible">
+<div class="{{alert.getType()}}" *ngIf="isVisible">
     
   <span (click)="hide()">
-    {{alert[0]}}
+    {{alert.getMessage()}}
   </span>
 </div>

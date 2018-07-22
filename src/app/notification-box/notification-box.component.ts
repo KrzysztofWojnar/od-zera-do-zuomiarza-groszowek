@@ -1,16 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NotificationComponent } from './notification/notification.component';
+import { alertTypeEnumeration, Alert } from './alert';
 
 
-enum alertTypeEnumeration {
-  "alert alert-success",
-  "alert alert-info",
-  "alert alert-warning",
-  "alert alert-danger",
-  "alert alert-light"
-}
-/* var zmienna = 0; */
-/* console.log(alertTypeEnumeration[zmienna]); */
 
 @Component({
   selector: 'app-notification-box',
@@ -32,13 +24,12 @@ export class NotificationBoxComponent implements OnInit {
   ngOnInit() {
   }
 
-  public static addNotification(alert: any, alertType: any) {
+  public static addNotification(alert: Alert) {
     if (NotificationBoxComponent.notifications === undefined) {
       NotificationBoxComponent.notifications = [];
       console.log("funkcja");
     }
-    alertType = alertTypeEnumeration[alertType];
-    NotificationBoxComponent.notifications.push([alert,alertType]);
+    NotificationBoxComponent.notifications.push(alert);
     /* console.log([alert,alertType]); */
   }
 }
