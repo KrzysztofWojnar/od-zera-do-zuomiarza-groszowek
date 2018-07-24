@@ -1,6 +1,9 @@
-<div class="{{alert.getType()}}" *ngIf="isVisible">
-    
-  <span (click)="hide()">
-    {{alert.getMessage()}}
-  </span>
+<div class=notificationOnHover>
+  <div class={{notificationClass}}>
+    <span (click)="hide()" (mouseenter)="mouseEnter()" (mouseleave)="mouseLeave()">
+      <div class="{{alert.getType()}}" *ngIf="isVisible">
+        {{alert.getMessage()}}
+      </div>
+    </span>
+  </div>
 </div>

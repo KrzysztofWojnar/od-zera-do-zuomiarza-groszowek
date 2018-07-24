@@ -6,8 +6,7 @@ import { alertTypeEnumeration, Alert } from './alert';
 
 @Component({
   selector: 'app-notification-box',
-  templateUrl: './notification-box.component.html',
-  styleUrls: ['./notification-box.component.css']
+  templateUrl: './notification-box.component.html'
 })
 
 export class NotificationBoxComponent implements OnInit {
@@ -15,6 +14,9 @@ export class NotificationBoxComponent implements OnInit {
   private static notifications: any[];
   getNotifications(): any[] {
     return NotificationBoxComponent.notifications;
+  }
+  getNotificationsReversed(): any[] {
+    return NotificationBoxComponent.notifications.reverse();
   }
   constructor() {
     NotificationBoxComponent.notifications = [];

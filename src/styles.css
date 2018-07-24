@@ -3,3 +3,63 @@
 body {
     background-color: rgb(153, 170, 100)
 }
+.alert {
+    position: relative;
+    right: 0;
+    bottom: 0;
+    margin-top: auto;
+}
+
+#notificationBox {
+    voice-family: male;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    margin-left: auto;
+    margin-top: auto;
+    height: 20px;
+    min-width: 250px;
+    min-height: 340px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column-reverse;
+    display: -webkit-flex;  /* Safari */
+    -webkit-flex-direction: row-reverse;    /* Safari */ 
+
+}
+app-notification {
+    font-family: verdana;
+}
+
+.debug {
+    border: 1px; 
+    border-color: red;
+    border-style: dotted;
+}
+/* Safari */
+@-webkit-keyframes powiadomienie {
+    0% {left:200px;}
+    100% {left: 0px;}
+}
+@keyframes powiadomienie {
+    0% {left:200px;}
+    100% {left: 0px;}
+}
+.notification {
+    opacity: 0.2;
+    transition-property: opacity;
+    transition-duration: 3.0s;
+    position: relative;
+    animation-name: powiadomienie;
+    animation-duration: 0.2s;
+    -webkit-animation-name: powiadomienie;
+    -webkit-animation-duration: 0.2s;
+}
+.notificationOnHover {
+    opacity: 1;
+    position: relative;
+    animation-name: powiadomienie;
+    animation-duration: 0.2s;
+    -webkit-animation-name: powiadomienie;
+    -webkit-animation-duration: 0.2s;
+}
