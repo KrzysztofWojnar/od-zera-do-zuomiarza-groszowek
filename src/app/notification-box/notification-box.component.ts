@@ -15,9 +15,6 @@ export class NotificationBoxComponent implements OnInit {
   getNotifications(): any[] {
     return NotificationBoxComponent.notifications;
   }
-  getNotificationsReversed(): any[] {
-    return NotificationBoxComponent.notifications.reverse();
-  }
   constructor() {
     NotificationBoxComponent.notifications = [];
 
