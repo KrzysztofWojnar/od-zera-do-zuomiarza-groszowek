@@ -23,7 +23,9 @@ export class NotificationBoxComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  getKeys(map){
+    return Array.from(map.keys());
+  }
   public static addNotification(alert: Alert) {
     if (NotificationBoxComponent.notifications === undefined) {
       NotificationBoxComponent.notifications = new Map();
