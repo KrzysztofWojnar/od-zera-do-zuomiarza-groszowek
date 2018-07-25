@@ -1,5 +1,5 @@
 <div id="notificationBox">
-  <div *ngFor="let key of getNotifications().keys()">
+  <div *ngFor="let key of getKeys(getNotifications())">
     <span class="border-top-0">
       <app-notification 
       [alert]=getNotifications().get(key) 
