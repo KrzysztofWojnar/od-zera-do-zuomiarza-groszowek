@@ -11,15 +11,15 @@ import { alertTypeEnumeration, Alert } from './alert';
 
 export class NotificationBoxComponent implements OnInit {
   public enum;
-  private static notifications: any[];
+  public index: number;
+  private static notificationsOld: any[];
+  private static notifications = {NotificationBoxComponent.index: Alert};
   getNotifications(): any[] {
-    return NotificationBoxComponent.notifications;
-  }
-  getNotificationsReversed(): any[] {
-    return NotificationBoxComponent.notifications.reverse();
+    return NotificationBoxComponent.notificationsOld;
   }
   constructor() {
-    NotificationBoxComponent.notifications = [];
+    NotificationBoxComponent.notificationsOld = [];
+    NotificationBoxComponent.notifications = {index: Alert};
 
   }
 
@@ -27,11 +27,11 @@ export class NotificationBoxComponent implements OnInit {
   }
 
   public static addNotification(alert: Alert) {
-    if (NotificationBoxComponent.notifications === undefined) {
-      NotificationBoxComponent.notifications = [];
+    if (NotificationBoxComponent.notificationsOld === undefined) {
+      NotificationBoxComponent.notificationsOld = [];
       console.log("funkcja");
     }
-    NotificationBoxComponent.notifications.push(alert);
+    NotificationBoxComponent.notificationsOld.push(alert);
     /* console.log([alert,alertType]); */
   }
 }
