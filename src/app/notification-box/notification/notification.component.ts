@@ -1,5 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Alert } from '../alert';
+import { NotificationBoxComponent } from '../notification-box.component';
+
 
 @Component({
   selector: 'app-notification',
@@ -7,6 +9,7 @@ import { Alert } from '../alert';
 })
 export class NotificationComponent implements OnInit {
   @Input() alert: Alert;
+  @Output() deleteEmitter: EventEmitter<Alert> = new EventEmitter<Alert>();
   private isVisible: boolean;
   private timer;
   private notificationClass: string = "notificationOnHover";
@@ -39,10 +42,11 @@ export class NotificationComponent implements OnInit {
   /* Notification's delaying */
   hide() {
     this.isVisible = false;
+    this.deleteEmitter.emit (this.alert);
   }
    /* Timer operating */
   private timerStart() {
-    this.timer = setTimeout(() => this.isVisible = false, 3000);
+    this.timer = setTimeout(() => this.hide(), 3000);
     /* this.notificationChangeClassWhenMauseIsAway(); */
   }
   private timerStop() {
