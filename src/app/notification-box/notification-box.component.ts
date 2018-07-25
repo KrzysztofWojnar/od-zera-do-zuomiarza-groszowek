@@ -11,27 +11,24 @@ import { alertTypeEnumeration, Alert } from './alert';
 
 export class NotificationBoxComponent implements OnInit {
   public enum;
-  public index: number;
-  private static notificationsOld: any[];
-  private static notifications = {NotificationBoxComponent.index: Alert};
-  getNotifications(): any[] {
-    return NotificationBoxComponent.notificationsOld;
+  public static index: Number = 0;
+  private static notifications: Map<string, Alert> = new Map();
+  getNotifications(): Map<string, Alert> {
+    return NotificationBoxComponent.notifications;
   }
   constructor() {
-    NotificationBoxComponent.notificationsOld = [];
-    NotificationBoxComponent.notifications = {index: Alert};
-
   }
 
   ngOnInit() {
   }
 
   public static addNotification(alert: Alert) {
-    if (NotificationBoxComponent.notificationsOld === undefined) {
-      NotificationBoxComponent.notificationsOld = [];
+    if (NotificationBoxComponent.notifications === undefined) {
+      NotificationBoxComponent.notifications = new Map();
       console.log("funkcja");
     }
-    NotificationBoxComponent.notificationsOld.push(alert);
+    NotificationBoxComponent.notifications.set( NotificationBoxComponent.index.toString() ,alert);
+    NotificationBoxComponent.index =  new Number(NotificationBoxComponent.index.valueOf() + 1 );
     /* console.log([alert,alertType]); */
   }
 }
