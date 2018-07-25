@@ -32,7 +32,7 @@ export class NotificationBoxComponent implements OnInit {
       console.log("funkcja");
     }
     NotificationBoxComponent.notifications.set(alert.getIndex(), alert);
-    console.log(NotificationBoxComponent.notifications);
+    /* console.log(NotificationBoxComponent.notifications); */
   }
 
   onDeleteEmitter(alert: Alert) {
