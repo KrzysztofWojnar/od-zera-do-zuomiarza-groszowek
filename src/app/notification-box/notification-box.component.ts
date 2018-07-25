@@ -10,8 +10,10 @@ import { alertTypeEnumeration, Alert } from './alert';
 })
 
 export class NotificationBoxComponent implements OnInit {
+  static notificationDying(): any {
+    throw new Error("Method not implemented.");
+  }
   public enum;
-  public static index: Number = 0;
   private static notifications: Map<string, Alert> = new Map();
   getNotifications(): Map<string, Alert> {
     return NotificationBoxComponent.notifications;
@@ -27,8 +29,15 @@ export class NotificationBoxComponent implements OnInit {
       NotificationBoxComponent.notifications = new Map();
       console.log("funkcja");
     }
-    NotificationBoxComponent.notifications.set( NotificationBoxComponent.index.toString() ,alert);
-    NotificationBoxComponent.index =  new Number(NotificationBoxComponent.index.valueOf() + 1 );
-    /* console.log([alert,alertType]); */
+    NotificationBoxComponent.notifications.set(alert.getIndex(), alert);
+    console.log(NotificationBoxComponent.notifications);
+  }
+
+  onDeleteEmitter(alert: Alert) {
+    return this.notificationDying(alert.getIndex());
+  }
+  /* Notification's delaying */
+  notificationDying (key: string): boolean {
+    return NotificationBoxComponent.notifications.delete(key);
   }
 }

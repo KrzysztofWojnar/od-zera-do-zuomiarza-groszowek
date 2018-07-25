@@ -1,4 +1,5 @@
 import { UUID } from 'angular2-uuid';
+import { Output } from '../../../node_modules/@angular/core';
 
 export enum alertTypeEnumeration {
     SUCCES =  "alert alert-success",
@@ -15,6 +16,7 @@ export class Alert {
         ) {
             this.index = UUID.UUID();
     }
+    
     getIndex (): string{
         return this.index;
     }

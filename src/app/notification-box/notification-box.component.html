@@ -1,7 +1,9 @@
 <div id="notificationBox">
   <div *ngFor="let key of getNotifications().keys()">
     <span class="border-top-0">
-      <app-notification [alert]=getNotifications().get(key)>
+      <app-notification 
+      [alert]=getNotifications().get(key) 
+      (deleteEmitter)=onDeleteEmitter($event)>
       </app-notification>
     </span>
   </div>
