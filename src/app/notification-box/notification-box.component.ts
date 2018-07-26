@@ -40,8 +40,9 @@ export class NotificationBoxComponent implements OnInit {
   onDeleteEmitter(alert: Alert) {
     return this.notificationDying(alert.getIndex());
   }
-  notificationDying(key: string): boolean {
-    return NotificationBoxComponent.notifications.delete(key);
+  notificationDying(key: string){
+    NotificationBoxComponent.notifications.delete(key);
+    return this.queuer();
   }
   static notificationDying(): any {
     throw new Error("Method not implemented.");
@@ -58,5 +59,8 @@ export class NotificationBoxComponent implements OnInit {
     } else {
       NotificationBoxComponent.notifications.set(alert.getIndex(), alert);
     }
+  }
+  queuer () {
+    NotificationBoxComponent.pushToDOM(NotificationBoxComponent.fifocNotifications.getElement());
   }
 }
