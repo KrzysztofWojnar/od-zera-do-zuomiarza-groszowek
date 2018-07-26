@@ -1,5 +1,5 @@
 import { NoCashAlertComponent } from "../no-cash-alert/no-cash-alert.component";
-import { Account } from '../Objects/Account';
+import { Account } from './Account';
 import { NotificationBoxComponent } from '../notification-box/notification-box.component';
 import { Alert, alertTypeEnumeration } from "../notification-box/alert";
 
