@@ -1,5 +1,5 @@
 import { UUID } from 'angular2-uuid';
-import { Output } from '../../../node_modules/@angular/core';
+import { Output } from '@angular/core';
 
 export enum alertTypeEnumeration {
     SUCCES =  "alert alert-success",
