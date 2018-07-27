@@ -9,6 +9,7 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NotificationBoxComponent } from './notification-box/notification-box.component';
 import { NotificationComponent } from './notification-box/notification/notification.component';
+import { KeysPipe } from './keys.pipe';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { NotificationComponent } from './notification-box/notification/notificat
     InvestmentsComponent,
     NotificationBoxComponent,
     NotificationComponent,
+    KeysPipe,
   ],
   imports: [
     BrowserModule,
