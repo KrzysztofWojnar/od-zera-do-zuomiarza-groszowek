@@ -2,7 +2,7 @@
   <div class={{notificationClass}}>
     <span (click)="hide()" (mouseenter)="mouseEnter()" (mouseleave)="mouseLeave()">
       <div class="{{alert.getType()}}" *ngIf="isVisible">
-        {{alert.getMessage()}}
+        {{alert.getMessage()}}<br>{{alert|keys}}
       </div>
     </span>
   </div>

@@ -19,7 +19,7 @@ body {
     margin-top: auto;
     height: 20px;
     min-width: 250px;
-    min-height: 340px;
+    min-height: 460px;
     overflow: hidden;
     display: flex;
     flex-direction: column-reverse;
