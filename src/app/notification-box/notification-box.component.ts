@@ -11,7 +11,7 @@ import { FirstInputFirstOutputContainer } from './FirstInputFirstOutputContainer
 })
 
 export class NotificationBoxComponent implements OnInit {
-
+  static notificationBoxCapacity = 5;
   public enum;
   private static notifications: Map<string, Alert> = new Map();
   /* "notifications" getter */
@@ -29,20 +29,22 @@ export class NotificationBoxComponent implements OnInit {
       NotificationBoxComponent.notifications = new Map();
       console.log("something gone wrong");
     }
-    NotificationBoxComponent.pushToDOM(alert);
+    NotificationBoxComponent.pushToQueue(alert);
     /* NotificationBoxComponent.notifications.set(alert.getIndex(), alert); */
-    console.log(NotificationBoxComponent.notifications);
+    /* console.log(NotificationBoxComponent.notifications); */
   }
   getKeys(map) {
     return Array.from(map.keys());
   }
   /* Notification's delaying */
   onDeleteEmitter(alert: Alert) {
-    return this.notificationDying(alert.getIndex());
+    this.notificationDying(alert.getIndex());
+    this.queuer();
+    return;
   }
-  notificationDying(key: string){
-    NotificationBoxComponent.notifications.delete(key);
-    return this.queuer();
+  notificationDying(key: string): boolean {
+    /*     this.queuer(); */
+    return NotificationBoxComponent.notifications.delete(key);
   }
   static notificationDying(): any {
     throw new Error("Method not implemented.");
@@ -52,15 +54,24 @@ export class NotificationBoxComponent implements OnInit {
     return this.getKeys(map).length;
   }
   static fifocNotifications = new FirstInputFirstOutputContainer;
-  static pushToDOM(alert) {
-    console.log (Array.from(this.notifications.keys()).length);
-    if (Array.from(this.notifications.keys()).length >= 5) {
+  static pushToQueue(alert) {
+    /* console.log(Array.from(this.notifications.keys()).length); */
+    if (Array.from(this.notifications.keys()).length >= NotificationBoxComponent.notificationBoxCapacity) {
       NotificationBoxComponent.fifocNotifications.addElement(alert)
     } else {
       NotificationBoxComponent.notifications.set(alert.getIndex(), alert);
     }
   }
-  queuer () {
-    NotificationBoxComponent.pushToDOM(NotificationBoxComponent.fifocNotifications.getElement());
+  nullFunction () {
+    return 0;
+  }
+  queuer() {
+    if (NotificationBoxComponent.fifocNotifications.getLength () == 0) {
+      console.log("poczekalnia pusta");
+      return;
+    } else {
+      NotificationBoxComponent.pushToQueue(NotificationBoxComponent.fifocNotifications.getElement());
+    return;
+  }
   }
 }
