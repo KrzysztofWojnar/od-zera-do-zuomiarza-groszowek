@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { Clicker } from './Objects/clicker-core';
 import { Account } from './Objects/Account';
-import { Button } from 'protractor';
-import { generate } from 'rxjs';
-import { NoCashAlertComponent } from './no-cash-alert/no-cash-alert.component';
-import { NotificationBoxComponent } from './notification-box/notification-box.component';
+import {HttpClient, HttpClientModule} from '@angular/common/http';
+import {Utils} from './shared/utils';
+
+
 
 @Component({
   selector: 'app-root',
@@ -14,11 +14,16 @@ import { NotificationBoxComponent } from './notification-box/notification-box.co
 export class AppComponent {
   title = 'Od zera do zuomiarza groszówek';
   account: Object;
-  
+
   public clicker: Clicker;
-  constructor() {
+  configUrl = 'http://192.168.43.46:5000/';
+
+
+  constructor(private http: HttpClient) {
     this.clicker = new Clicker();
     this.account = new Account();
+    const u: Utils = new Utils(this.http);
+    u.showConfig(this.configUrl);
   }
 }
 

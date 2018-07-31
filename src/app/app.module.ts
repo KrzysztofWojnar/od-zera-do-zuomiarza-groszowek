@@ -10,6 +10,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NotificationBoxComponent } from './notification-box/notification-box.component';
 import { NotificationComponent } from './notification-box/notification/notification.component';
 import { KeysPipe } from './keys.pipe';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { KeysPipe } from './keys.pipe';
     BsDropdownModule.forRoot(),
     TooltipModule.forRoot(),
     ModalModule.forRoot(),
-    NgbModule.forRoot()
+    NgbModule.forRoot(),
+    HttpClientModule
 
   ],
   providers: [],
