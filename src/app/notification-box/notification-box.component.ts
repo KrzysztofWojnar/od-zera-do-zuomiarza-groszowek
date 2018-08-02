@@ -1,3 +1,8 @@
+/*
+@Author:Krzysztof Wojnar
+@email: krzysztofwojnar@outlook.com
+@licenceL Public-domain software
+*/
 import { Component, OnInit } from '@angular/core';
 import { NotificationComponent } from './notification/notification.component';
 import { alertTypeEnumeration, Alert } from './alert';

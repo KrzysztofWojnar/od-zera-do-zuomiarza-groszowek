@@ -1,3 +1,8 @@
+/*
+@Author:Krzysztof Wojnar
+@email: krzysztofwojnar@outlook.com
+@licenceL Public-domain software
+*/
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Alert } from '../alert';
 import { NotificationBoxComponent } from '../notification-box.component';
