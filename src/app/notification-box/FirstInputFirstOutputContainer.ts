@@ -1,10 +1,12 @@
-export class FirstInputFirstOutputContainer {
-    constructor() { }
-    private container: any = [];
+export class FirstInputFirstOutputContainer<T> {
+    constructor() {
+
+     }
+    private  container: T[] = [];
     public getLength(): Number {
         return this.container.length;
     }
-    public getElement(): any {
+    public getElement(): T {
         let logInfo = this.container.length - 1;
         console.log("pozostalo w poczekalni: " + logInfo);
         return this.container.shift();
