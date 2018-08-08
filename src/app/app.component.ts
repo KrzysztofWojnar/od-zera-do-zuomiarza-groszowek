@@ -2,7 +2,8 @@ import { Component } from '@angular/core';
 import { Clicker } from './Objects/clicker-core';
 import { Account } from './Objects/Account';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
-import {Utils} from './shared/utils';
+/* import {Utils} from './shared/utils'; */
+import { ImportingData } from './shared/importing-data';
 
 
 
@@ -21,9 +22,10 @@ export class AppComponent {
 
   constructor(private http: HttpClient) {
     this.clicker = new Clicker();
+/*     const u: Utils = new Utils(); */
+    const update: ImportingData = new ImportingData(this.http);
+    update.importData(this.configUrl);
     this.account = new Account();
-    const u: Utils = new Utils(this.http);
-    u.showConfig(this.configUrl);
   }
 }
 
