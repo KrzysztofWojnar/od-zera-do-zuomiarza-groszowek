@@ -1,3 +1,8 @@
+/*
+@Author:Krzysztof Wojnar
+@email: krzysztofwojnar@outlook.com
+@licenceL Public-domain software
+*/
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';

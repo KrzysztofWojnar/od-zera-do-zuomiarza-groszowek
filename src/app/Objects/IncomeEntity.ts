@@ -1,3 +1,8 @@
+/*
+@Author:Krzysztof Wojnar
+@email: krzysztofwojnar@outlook.com
+@licenceL Public-domain software
+*/
 import { NoCashAlertComponent } from "../no-cash-alert/no-cash-alert.component";
 import { Account } from './Account';
 import { NotificationBoxComponent } from '../notification-box/notification-box.component';

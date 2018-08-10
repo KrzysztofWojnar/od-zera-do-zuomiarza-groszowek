@@ -1,8 +1,11 @@
-export class FirstInputFirstOutputContainer<T> {
-    constructor() {
-
-     }
-    private  container: T[] = [];
+/*
+@Author:Krzysztof Wojnar
+@email: krzysztofwojnar@outlook.com
+@licenceL Public-domain software
+*/
+export class FirstInputFirstOutputContainer {
+    constructor() { }
+    private container: any = [];
     public getLength(): Number {
         return this.container.length;
     }

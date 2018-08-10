@@ -1,3 +1,8 @@
+/*
+@Author:Krzysztof Wojnar
+@email: krzysztofwojnar@outlook.com
+@licenceL Public-domain software
+*/
 import { Component } from '@angular/core';
 import { Clicker } from './Objects/clicker-core';
 import { Account } from './Objects/Account';
