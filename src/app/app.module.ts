@@ -15,7 +15,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NotificationBoxComponent } from './notification-box/notification-box.component';
 import { NotificationComponent } from './notification-box/notification/notification.component';
 import { KeysPipe } from './keys.pipe';
-import {HttpClientModule} from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [

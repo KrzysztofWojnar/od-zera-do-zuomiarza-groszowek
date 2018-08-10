@@ -32,7 +32,7 @@ export class IncomeEntity {
             this.income = -this.upgradeCost;
             this.onEvent();
             this.income = this.incomeTemp + this.upgradeValue;
-            alert = new Alert("Ulepszenie wykupione!", alertTypeEnumeration.INFO);
+            alert = new Alert("Ulepszenie wykupione!", alertTypeEnumeration.SUCCES);
         } else {
             NoCashAlertComponent.isVisible = true;
             alert = new Alert("Nie masz pieniędzy!", alertTypeEnumeration.WARNING);

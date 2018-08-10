@@ -3,8 +3,10 @@
 @email: krzysztofwojnar@outlook.com
 @licenceL Public-domain software
 */
+import { ImportingData } from '../shared/importing-data';
+
 export class Account {
-    public static cash: number = 0;
+    public static cash: number = 0;/* ImportingData.getCash(); */
     constructor () {
         this.getResoult();
     }
