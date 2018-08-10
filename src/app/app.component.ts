@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Clicker } from './Objects/clicker-core';
 import { Account } from './Objects/Account';
-import {HttpClient, HttpClientModule} from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 /* import {Utils} from './shared/utils'; */
 import { ImportingData } from './shared/importing-data';
 
