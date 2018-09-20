@@ -32,11 +32,6 @@ export class ImportingData {
         console.log(ImportingData.importedMockup.cash);
         return ImportingData.importedMockup.cash;
     }
-    static exportData() : string {
-        return '{"cash": "' + Account.getCash().toString() + '"}';
-    }
-    static postData (){
-        
-    }
+
 
 }

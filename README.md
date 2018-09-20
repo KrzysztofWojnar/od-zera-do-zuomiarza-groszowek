@@ -1,6 +1,6 @@
 
 
-# TwojaStaraSmazySol
+# Od_zera_do_zuomiarza_groszowek
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
 

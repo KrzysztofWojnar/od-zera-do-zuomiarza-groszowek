@@ -58,7 +58,7 @@ export class NotificationBoxComponent implements OnInit {
   getMapSize(map): number {
     return this.getKeys(map).length;
   }
-  static fifocNotifications = new FirstInputFirstOutputContainer<Alert>();
+  static fifocNotifications = new FirstInputFirstOutputContainer();
   static pushToQueue(alert: Alert) {
     /* console.log(Array.from(this.notifications.keys()).length); */
     if (Array.from(this.notifications.keys()).length >= NotificationBoxComponent.notificationBoxCapacity) {
