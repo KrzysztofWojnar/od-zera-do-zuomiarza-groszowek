@@ -9,6 +9,7 @@ import { Account } from './Objects/Account';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 /* import {Utils} from './shared/utils'; */
 import { ImportingData } from './shared/importing-data';
+/* import { ExportingData } from './shared/exporting-data'; */
 
 
 
@@ -22,14 +23,15 @@ export class AppComponent {
   account: Object;
 
   public clicker: Clicker;
-  configUrl = 'http://192.168.43.46:5000/';
+  static configUrl = 'http://192.168.43.46:5000/';
 
 
   constructor(private http: HttpClient) {
     this.clicker = new Clicker();
 /*     const u: Utils = new Utils(); */
     const update: ImportingData = new ImportingData(this.http);
-    update.importData(this.configUrl);
+    /* const send: ExportingData = new ExportingData(this.http); */
+    update.importData(AppComponent.configUrl);
     this.account = new Account();
   }
 }

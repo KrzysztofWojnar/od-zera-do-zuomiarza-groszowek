@@ -9,7 +9,7 @@ export class FirstInputFirstOutputContainer {
     public getLength(): Number {
         return this.container.length;
     }
-    public getElement(): T {
+    public getElement(): any {
         let logInfo = this.container.length - 1;
         console.log("pozostalo w poczekalni: " + logInfo);
         return this.container.shift();

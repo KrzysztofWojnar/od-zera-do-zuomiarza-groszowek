@@ -3,7 +3,7 @@
     <span (click)="hide()" (mouseenter)="mouseEnter()" (mouseleave)="mouseLeave()">
       <div class="{{alert.getType()}}" *ngIf="isVisible">
         {{alert.getMessage()}}
-        <br><div style="font-size: 8px;">{{alert|keys}}</div>
+        <!-- <br><div style="font-size: 8px;">{{alert|keys}}</div> -->
       </div>
     </span>
   </div>
