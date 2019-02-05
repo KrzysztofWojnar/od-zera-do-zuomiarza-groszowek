@@ -16,7 +16,7 @@ import { FirstInputFirstOutputContainer } from './FirstInputFirstOutputContainer
 })
 
 export class NotificationBoxComponent implements OnInit {
-  static notificationBoxCapacity = 5;
+  static notificationBoxCapacity = 3;
   public enum;
   private static notifications: Map<string, Alert> = new Map();
   /* "notifications" getter */
@@ -48,7 +48,7 @@ export class NotificationBoxComponent implements OnInit {
     return;
   }
   notificationDying(key: string): boolean {
-    /*     this.queuer(); */
+    /*this.queuer(); */
     return NotificationBoxComponent.notifications.delete(key);
   }
   static notificationDying(): any {
@@ -68,12 +68,12 @@ export class NotificationBoxComponent implements OnInit {
     }
   }
   queuer() {
-    if (NotificationBoxComponent.fifocNotifications.getLength () == 0) {
-      console.log("poczekalnia pusta");
+    if (NotificationBoxComponent.fifocNotifications.getLength() == 0) {
+      //console.log("poczekalnia pusta");
       return;
     } else {
       NotificationBoxComponent.pushToQueue(NotificationBoxComponent.fifocNotifications.getElement());
-    return;
-  }
+      return;
+    }
   }
 }

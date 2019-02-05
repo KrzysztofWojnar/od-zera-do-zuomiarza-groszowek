@@ -4,7 +4,6 @@
 @licenceL Public-domain software
 */
 import { UUID } from 'angular2-uuid';
-import { Output } from '@angular/core';
 
 export enum alertTypeEnumeration {
     SUCCES =  "alert alert-success",

@@ -1,16 +1,19 @@
-<div style="text-align:center">
-  <h1>
-    Witamy w grze {{ title }}!
-  </h1> 
+<div>
+  <h1 style="margin-top: 30px; color: rgb(9, 113, 178);">Witamy w grze</h1>
+  <h1 id="main-title">
+    {{ title.toUpperCase() }}!
+  </h1>
   <div class=row>
     <!-- INVESTMENTS -->
-    <div class="col-sm-3" style="background-color:rgb(108, 153, 115);">
-      <p>Inwestycje</p>
-      <app-investments></app-investments>
+    <div class="col-sm-4" style="background-color:rgb(178, 18, 18); border-radius: 20px;">
+      <div class="box">
+        <p id="investmentsText">Inwestycje</p>
+        <app-investments (currentIncome)="currentIncome($event)"></app-investments>
+      </div>
     </div>
     <!-- CLICKER -->
-    <div class="col-sm-6" style="background-color:rgb(96, 96, 138);">
-      <img class="img img-circle" (click)="clicker.onEvent()" width="100" alt="Angular Logo" src="../assets/grosz.png">
+    <div class="col-sm-4" style="background-color:rgb(255, 252, 25); border-radius: 20px;">
+      <img class="img img-circle" id="grosz" (click)="clicker.onEvent()" width="100" alt="Angular Logo" src="../assets/grosz.png">
       <p style="text-align:center">Twój stan konta to: {{account.getResoult(account.cash)}} groszy!
       </p>
       <p style="font-size: 300%">
@@ -18,23 +21,28 @@
           <div class="col-5"></div>
           <div class="col-2">
             <b>
-              <a href=#>
+              <a class="button" href=#>
                 <div (click)="clicker.upgrade()">ULEPSZ</div>
               </a>
             </b>
           </div>
           <div class="col-5"></div>
         </div>
-        <p align=center>Koszt to tylko 10 groszy!</p>
+        <p>Koszt to tylko 10 groszy!</p>
         <!-- <app-no-cash-alert></app-no-cash-alert> -->
     </div>
-    <div class="col-sm-3" style="background-color:rgb(108, 153, 115);">
-      
+    <div class="col-sm-4" style="background-color:rgb(178, 18, 18); border-radius: 20px;">
+      <div class="box">
+        <p>Za kliknięcie na grosz aktualnie dostajesz groszy:</p>
+        <p class="counter">{{clicker.getIncome()}}</p>
+        <p>Co sekundę dostajesz groszy:</p>
+        <p class="counter">{{investmentsIncome}}</p>
+      </div>
     </div>
 
   </div>
   <!-- LEGACY -->
-  <p>
+  <!-- <p>
     <a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a>
-  </p>
+  </p> -->
   <app-notification-box></app-notification-box>

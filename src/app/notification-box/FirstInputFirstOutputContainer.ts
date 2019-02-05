@@ -4,14 +4,13 @@
 @licenceL Public-domain software
 */
 export class FirstInputFirstOutputContainer {
-    constructor() { }
     private container: any = [];
     public getLength(): Number {
         return this.container.length;
     }
     public getElement(): any {
-        let logInfo = this.container.length - 1;
-        console.log("pozostalo w poczekalni: " + logInfo);
+        //let logInfo = this.container.length - 1;
+        //console.log("pozostalo w poczekalni: " + logInfo);
         return this.container.shift();
     }
 

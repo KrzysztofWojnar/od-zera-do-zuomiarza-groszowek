@@ -1,7 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 @import '~bootstrap/dist/css/bootstrap.min.css';
-body {
-    background-color: rgb(153, 170, 100)
+#main {
+    background:rgb(20, 133, 204);
+    text-align: center;
 }
 .alert {
     position: relative;
@@ -10,15 +11,24 @@ body {
     margin-top: auto;
 }
 
+#main-title {
+    margin-top: 15px;
+    margin-bottom: 45px;
+    color: rgb(255, 0, 0);
+    
+}
+#grosz {
+    margin-top: 15px;
+}
 #notificationBox {
     position: fixed;
-    right: 20px;
+    right: 41.3%;
     bottom: 20px;
-    margin-left: auto;
+    margin-left: 50%;
     margin-top: auto;
     height: 20px;
     min-width: 250px;
-    min-height: 460px;
+    min-height: 220px;
     overflow: hidden;
     display: flex;
     flex-direction: column-reverse;
@@ -26,12 +36,37 @@ body {
     -webkit-flex-direction: row-reverse;    /* Safari */ 
 
 }
+.box {
+    margin-top: 35px;
+}
+.investmentsBox {
+    margin-top: 35px;
+}
+#investmentsText {
+    font-size: 19px;
+    text-transform: uppercase;
+    text-emphasis: bold;
+    text-decoration-style: dotted;
+    font-weight: bold;
+}
+
 app-notification {
-    font-family: verdana;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+a.button {
+    font-weight: bold;
+}
+a.button:hover {
+    text-decoration: none;
+}
+.counter {
+    font-size: 24px;
+    font-weight: bolder;
+    color: rgb(9, 113, 178);
 }
 
 .debug {
-    border: 1px; 
+    border: 5px; 
     border-color: red;
     border-style: dotted;
 }
@@ -50,9 +85,9 @@ app-notification {
     transition-duration: 3.0s;
     position: relative;
     animation-name: powiadomienie;
-    animation-duration: 0.2s;
+    animation-duration: 0.5s;
     -webkit-animation-name: powiadomienie;
-    -webkit-animation-duration: 0.2s;
+    -webkit-animation-duration: 0.5s;
 }
 .notificationOnHover {
     opacity: 1;
